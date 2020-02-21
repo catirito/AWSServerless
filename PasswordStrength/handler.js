@@ -1,6 +1,9 @@
 'use strict';
-const verifyPasswordLength = require('./constrains/verifyPasswordLength');
-const verifyPasswordStrength = require('./constrains/verifyPasswordStrength');
+const { 
+  verifyPasswordLength,
+  verifyPasswordStrength
+} = require('./constrains');
+
 
 
 module.exports.password = async event => {
@@ -9,7 +12,7 @@ module.exports.password = async event => {
 
     await verifyPasswordLength(body.password);
     await verifyPasswordStrength(body.password);
-    
+
     return {
       statusCode: 200,
       body: JSON.stringify({
