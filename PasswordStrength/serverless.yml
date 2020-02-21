@@ -61,6 +61,11 @@ provider:
 #    - exclude-me.js
 #    - exclude-me-dir/**
 
+package:
+  exclude:
+    - node_modules/** # no need to add this yourself, this plugin does it for you 
+
+
 functions:
   password:
     handler: handler.password
